@@ -1,4 +1,6 @@
-**Online Shop Time Series Analysis and Forecasting**
+# **Online Shop Time Series Analysis and Forecasting**
+
+
 This project involves time series analysis and forecasting of unique visits to an online shop using statistical and machine learning models. 
 Key methodologies include exploratory data analysis (EDA), regression techniques, and the implementation of ARIMA and SARIMA models. 
 The project emphasizes detecting seasonality, trends, and residual patterns to provide actionable insights and accurate predictions. 
