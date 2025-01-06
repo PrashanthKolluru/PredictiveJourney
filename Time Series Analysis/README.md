@@ -1,4 +1,4 @@
-# **Time Series Analysis and Forecasting of an Online Shop**
+# **Time Series Analysis and Forecasting of a local store**
 
 **_Description:_**
 This project involves time series analysis and forecasting of unique visits to an online shop using statistical and machine learning models. 
