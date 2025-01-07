@@ -1,4 +1,4 @@
-# **Montreal High School Student Performance Prediction**
+# **High School Student Performance Prediction**
 
 **_Description:_**
 This project focuses on predicting high school student grades using a regression model, based on a dataset containing performance metrics of students from Montreal.
