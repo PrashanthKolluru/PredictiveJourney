@@ -1,19 +1,81 @@
-# **Time Series Analysis and Forecasting of a local store**
+# 📈 Time Series Analysis: Predicting Unique Customer Visits 🛒
 
-**_Description:_**
-This project involves time series analysis and forecasting of unique visits to an online shop using statistical and machine learning models. 
-Key methodologies include exploratory data analysis (EDA), regression techniques, and the implementation of ARIMA and SARIMA models. 
-The project emphasizes detecting seasonality, trends, and residual patterns to provide actionable insights and accurate predictions. 
-Visualizations, seasonal decompositions, and advanced statistical tests are employed to ensure robust modeling and interpretation.
+Welcome to my Machine Learning project focused on **Time Series Analysis** to predict the number of unique customers visiting a local store in Montreal. By analyzing historical customer visit data, this project leverages powerful statistical models (**ARIMA & SARIMA**) to provide reliable forecasts, essential for strategic business planning and optimization.
 
-**_Contents of this project:_**
-- PowerPoint Presentation: Detailed explanation of methods, models, results, and conclusions, along with key plots and insights.
-- Jupyter Notebook (.ipynb): Includes the data preprocessing, feature selection, regression model implementation, and evaluation.
-- HTML Export of Notebook: A web-friendly version of the Jupyter Notebook for easy viewing.
+---
 
-**Key features:**
-- Comprehensive data preprocessing and cleaning.
-- Seasonal and trend analysis through visualizations and statistical methods.
-- Implementation of ARIMA and SARIMA models for forecasting.
-- Residual diagnostics and validation of model accuracy.
-- Predictive analytics for business insights and planning.
+## 🎯 Project Objective
+The main goal of this project is to analyze online store visit patterns over time and accurately predict future unique visits. The insights from this analysis enable effective demand forecasting, resource planning, and targeted marketing strategies.
+
+---
+
+## 📊 Dataset Overview
+The dataset includes the following key variables:
+
+- 📅 **Date & Day**
+- 🔄 **Page Loads**
+- 👤 **First-Time Visits**
+- ♻️ **Returning Visits**
+- 🎯 **Target Variable**: Unique Visits *(Primary focus for prediction)*
+
+---
+
+## 🧹 Data Preprocessing
+Data underwent several preprocessing steps:
+
+- ✅ Checked and confirmed the absence of missing values.
+- 🔢 Converted data types for uniformity (strings → integers → datetime).
+- 📌 Date column was converted to datetime format and set as the dataset index.
+
+---
+
+## 📉 Exploratory Data Analysis (EDA)
+Key insights from EDA included:
+
+- **Seasonality in Customer Visits**: Strong seasonal trends with consistent peaks and valleys each year, aligned with holidays or promotional events.
+- **Stable Long-term Trends**: Overall trend remains stable with minor fluctuations, suggesting steady but not rapidly increasing business performance.
+- **Periodic Spikes and Troughs**: Clear periodic spikes indicate successful promotional activities or seasonal demand.
+
+---
+
+## 📈 Seasonality and Trend Decomposition
+Using **Seasonal Decomposition**, I uncovered three main components:
+
+- **Trend**: Clear long-term fluctuations indicating gradual shifts in customer visits over the years.
+- **Seasonality**: Strong recurring patterns throughout the year.
+- **Residual (Noise)**: Random fluctuations, indicating minimal unexplained variance.
+
+---
+
+## 🛠️ Modeling Techniques
+Two primary models were used to forecast customer visits:
+
+### 🔹 **ARIMA (Autoregressive Integrated Moving Average)**
+- Captured overall trends and seasonality effectively.
+- Data differencing transformed non-stationary data to stationary, suitable for ARIMA modeling.
+- Provided solid short-term predictive power.
+
+### 🔸 **SARIMA (Seasonal ARIMA)**
+- Integrated seasonal components effectively, significantly improving predictions.
+- Accurately modeled weekly seasonality patterns (with parameter configuration `SARIMA(2,1,2)(2,1,2,7)`).
+- Demonstrated higher precision compared to standard ARIMA, particularly for seasonal data.
+
+---
+
+## 🚀 Model Evaluation & Accuracy
+The **SARIMA** model demonstrated excellent forecasting performance:
+
+- ✅ **In-Sample Forecast**: SARIMA closely tracked historical data with high accuracy.
+- 🌟 **Near Future Predictions**: Forecasts showed strong alignment with historical seasonal patterns, maintaining accuracy.
+- ⚠️ **Long-Term Predictions**: While maintaining seasonality, forecast accuracy gradually reduced, reflected by widening confidence intervals over extended periods.
+
+**Model Diagnostics:**
+- Residuals showed randomness with minimal autocorrelation, confirming the robustness of the SARIMA model.
+- Residual distribution was approximately normal, indicating a well-fitted model without systematic bias.
+
+---
+
+## 🔮 Key Findings & Insights
+- **Seasonality Dominates**: Customer visits heavily influenced by seasonal trends (holidays, events).
+- **Stable Long-Term Performance**: No significant upward/downward long-term trend indicates consistent business.
+- **Forecast Reliability**: SARIMA effectively captures recurring patterns,
