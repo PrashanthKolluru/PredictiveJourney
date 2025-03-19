@@ -1,2 +1,2 @@
 # PredictiveJourney
-PredictiveJourney is a GitHub repository featuring a collection of data science projects focused on predictive analytics and machine learning. It includes end-to-end workflows, exploratory data analysis, and predictive modelling. 
+PredictiveJourney is a GitHub repository featuring a collection of data science projects built by me which are focused on predictive analytics and machine learning. It includes end-to-end workflows, exploratory data analysis, and predictive modelling. 
