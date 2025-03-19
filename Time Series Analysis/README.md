@@ -6,7 +6,7 @@ Key methodologies include exploratory data analysis (EDA), regression techniques
 The project emphasizes detecting seasonality, trends, and residual patterns to provide actionable insights and accurate predictions. 
 Visualizations, seasonal decompositions, and advanced statistical tests are employed to ensure robust modeling and interpretation.
 
-**_Contents of the Repository:_**
+**_Contents of this project:_**
 - PowerPoint Presentation: Detailed explanation of methods, models, results, and conclusions, along with key plots and insights.
 - Jupyter Notebook (.ipynb): Includes the data preprocessing, feature selection, regression model implementation, and evaluation.
 - HTML Export of Notebook: A web-friendly version of the Jupyter Notebook for easy viewing.
