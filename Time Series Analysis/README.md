@@ -78,4 +78,4 @@ The **SARIMA** model demonstrated excellent forecasting performance:
 ## 🔮 Key Findings & Insights
 - **Seasonality Dominates**: Customer visits heavily influenced by seasonal trends (holidays, events).
 - **Stable Long-Term Performance**: No significant upward/downward long-term trend indicates consistent business.
-- **Forecast Reliability**: SARIMA effectively captures recurring patterns,
+- **Forecast Reliability**: SARIMA effectively captures recurring patterns.
