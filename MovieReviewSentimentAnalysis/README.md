@@ -33,7 +33,7 @@ This project focuses on classifying movie reviews as either positive or negative
 |--------|-------|
 | Classifier | LinearSVC |
 | Vectorizer | TF-IDF |
-| Accuracy | 0.93756 or 93.756% |
+| Accuracy | 0.93756 or 93.756% ≈ 94% |
 
 ---
 
