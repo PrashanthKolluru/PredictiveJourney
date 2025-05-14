@@ -34,7 +34,7 @@ This project leverages **unsupervised machine learning** techniques to uncover d
 
 ## 🔍 Cluster Insights (Annual Income vs Spending Score)
 
-![Customer Groups Plot](path_to_your_image/customer_groups.png)
+![Customer Groups Plot](CustomerSegmentation.png)
 
 ### 🟢 Cluster 0: High Spending, Low to Mid Income
 - **Annual Income:** Low to Medium range.
