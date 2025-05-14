@@ -56,7 +56,7 @@ This project leverages **unsupervised machine learning** techniques to uncover d
 - **Spending Score:** Low.
 - **Insight:** Price-sensitive customers. Engage with discounts, entry-level products, and affordability-focused campaigns.
 
-### 🟦 Cluster 4: High Income, Low Spending
+### 🔵 Cluster 4: High Income, Low Spending
 - **Annual Income:** High.
 - **Spending Score:** Low.
 - **Insight:** Affluent but cautious spenders. Focus on quality, exclusivity, and long-term value in campaigns.
@@ -69,7 +69,7 @@ This project leverages **unsupervised machine learning** techniques to uncover d
 | 🔴 Cluster 1 | Medium | Moderate Spending | Upsell & Cross-sell |
 | 🔵 Cluster 2 | High | High Spending | VIP Experience, Premium Products |
 | 🟣 Cluster 3 | Low | Low Spending | Discounts, Entry-Level Offers |
-| 🟦 Cluster 4 | High | Low Spending | Quality & Value-Focused Marketing |
+| 🔵 Cluster 4 | High | Low Spending | Quality & Value-Focused Marketing |
 
 ## 🔥 Conclusion
 
