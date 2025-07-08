@@ -1,26 +1,3 @@
-#!/usr/bin/env python3
-"""
-personal_chatbot_backend.py – Azure‑hosted Flask API for the “Friday” chatbot
-──────────────────────────────────────────────────────────────────────────────
-• RAG over a Qdrant Cloud collection (profile vectors already ingested)
-• Local embeddings with Sentence‑Transformers (paraphrase‑multilingual‑mpnet‑base‑v2 → 768‑d)
-• Gemini 2.0 Flash for answer generation + back‑translation
-• 10‑turn conversation memory per session (RAM‑based)
-• Endpoints:
-    GET  /             → health‑check
-    GET  /ping         → JSON liveness probe
-    POST /chat         → {question, session_id?, history?}
-    POST /reload       → force re‑ingest PDF into Qdrant
-• CORS "*" to simplify frontend calls during testing
-
-Environment variables (set in Azure → Settings → Configuration):
-    QDRANT_URL         e.g. https://<cluster‑id>.qdrant.cloud:6333
-    QDRANT_API_KEY     ← Qdrant Cloud API key (read/write)
-    GOOGLE_API_KEY     ← Gemini key
-    QDRANT_COLLECTION  (optional, default="profile")
-    PROFILE_DOC_PATH   (optional, default="profile.pdf" in app root)
-"""
-
 from __future__ import annotations
 
 # ─── Std‑lib & third‑party imports ─────────────────────────────────────
@@ -63,13 +40,12 @@ PDF_PATH          = Path(os.getenv("PROFILE_DOC_PATH", "profile.pdf"))
 if not (QDRANT_URL and QDRANT_API_KEY and GOOGLE_API_KEY):
     raise RuntimeError("Missing mandatory environment variables (QDRANT_URL / QDRANT_API_KEY / GOOGLE_API_KEY)")
 
-# Embedding model – local in‑process
+# Embedding model
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 EMB_DIM    = 768
 
 @lru_cache(maxsize=1)
 def get_embed_model() -> SentenceTransformer:
-    """Lazily load the embedding model once per process."""
     return SentenceTransformer(MODEL_NAME)
 
 # Retrieval/Generation params
@@ -316,8 +292,3 @@ def reload_pdf():
 
 def run_chat(prompt: str, history: List[Dict[str, str]]) -> str:
     return _answer(prompt, sid="azure-function", hist_in=history)
-
-# ─── Local dev runner (ignored in Azure App Service / Function) ───────
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    app.run(host="0.0.0.0", port=port, debug=True)
