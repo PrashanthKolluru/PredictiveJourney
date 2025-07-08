@@ -20,7 +20,7 @@ PredictiveJourney showcases end-to-end workflows from exploratory data analysis 
 
 4. **Retail Footfall Forecasting**  
    - ARIMA & SARIMA modeling of unique visits  
-   - SARIMA(2,1,2)(2,1,2,7) captures weekly seasonality 
+   - SARIMA (2,1,2)(2,1,2,7) captures weekly seasonality 
 
 5. **Sentiment Analysis (Movie Reviews)**  
    - TF-IDF + LinearSVC pipeline for binary sentiment classification 
