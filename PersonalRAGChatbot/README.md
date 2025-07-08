@@ -1,37 +1,50 @@
-# Friday: Personal RAG Chatbot
+# Personal_RAG_chatbot
 
-This repo powers “Friday,” a multilingual RAG chatbot using:
-- **Qdrant Cloud** for vector storage
-- **Sentence-Transformers** (MPNet) for local 768-d embeddings
-- **Google Gemini 2.0 Flash** for LLM generation and translation
-- **Flask + Gunicorn** on Azure App Service
+# 🤖 Multilingual Personal RAG Chatbot
 
-## Files
+A fast, multilingual chatbot that:
+- Accepts questions in **English, Hindi, Telugu, and French** (via text or voice)
+- Answers in **English**, with bracketed translations in the original input language
+- Uses **Retrieval-Augmented Generation (RAG)** to fetch personalized answers from Prashanth's information storage database
+- Falls back to **Google Gemini 2.0 Flash** for general knowledge queries
+- Fully deployable on **Azure** using Python, Qdrant, and Azure Cognitive Services
 
-- `personal_chatbot_backend.py` – Flask API (endpoints `/chat`, `/reload`, etc.)
-- `ingestpdf.py`                – PDF-→-Qdrant ingestion script
-- `profile.pdf`                 – your bio PDF
-- `requirements.txt`            – Python dependencies
-- `Procfile`                    – Azure startup command
-- `.env.example`                – sample environment variables
-- `.gitignore`                  – files/folders to exclude
+---
 
-## Deployment
+## 🚀 Features
+- 🗣️ **Multilingual I/O**: Language detection, text-to-speech & voice-to-text for English, Hindi, Telugu, and French  
+- 📄 **Document-Grounded Q&A**: Semantic search over `profile.pdf` via Qdrant vector database  
+- 🧠 **Hybrid RAG Pipeline**: Combines semantic retrieval with LLM reasoning (Gemini 2.0 Flash API)  
+- ☁️ **Cloud-First**: End-to-end hosting on Azure (Embeddings, Vector DB, Cognitive Services)  
+- 🔗 **Embeddings**: Uses `paraphrase-multilingual-mpnet-base-v2` hosted on Azure
 
-1. **Configure Azure App Service**  
-   - Connect this GitHub repo under Deployment Center  
-   - In “Configuration,” set environment variables:  
-     ```ini
-     QDRANT_URL=
-     QDRANT_API_KEY=
-     GOOGLE_API_KEY=
-     PROFILE_DOC_PATH=profile.pdf
-     QDRANT_COLLECTION=profile
-     ```
-2. **CORS**  
-   - Under API → CORS, add your frontend origin.
-3. **Test**  
-   ```bash
-   curl -X POST https://<your-app>.azurewebsites.net/chat \
-     -H "Content-Type: application/json" \
-     -d '{"question":"Who is Prashanth?"}'
+---
+
+## 🛠️ Tech Stack
+- **Language**: Python  
+- **PDF Parsing**: PyMuPDF  
+- **Embeddings & Semantic Models**: Azure-hosted `sentence-transformers/paraphrase-multilingual-mpnet-base-v2`  
+- **Vector Database**: Qdrant on Azure  
+- **LLM API**: Google Gemini 2.0 Flash  
+- **Voice & Translation**: Azure Cognitive Services (Speech & Translator APIs)  
+- **Deployment**: Azure App Services, Functions, Container Instances
+
+---
+
+## 🏗️ Architecture Overview
+1. **Document Ingestion**  
+   Extract text from `profile.pdf`  
+2. **Chunking & Embedding**  
+   Split into chunks → generate embeddings  
+3. **Indexing**  
+   Store vectors in Qdrant for fast semantic search  
+4. **User Query**  
+   - Detect language & transcribe voice input  
+   - Retrieve top-k context chunks from Qdrant  
+   - Formulate RAG prompt & send to Gemini 2.0 Flash  
+5. **Response Assembly**  
+   - Receive LLM answer  
+   - Translate to original language if needed  
+   - TTS for spoken replies
+
+---
