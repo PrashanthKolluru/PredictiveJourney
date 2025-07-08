@@ -13,13 +13,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
 def split_into_sections(full_text: str) -> Iterator[Tuple[str, str]]:
-    """
-    Splits `full_text` into (section_title, section_text) pairs.
-    - A heading is any ALL-CAPS line ending with a colon.
-    - Numbered items (e.g. '1. Credit Card Fraud…') do NOT end with a colon,
-      so they remain part of their parent section’s text.
-    - Substring-based special-cases collapse similar headings into clean titles.
-    """
     lines = full_text.splitlines()
     indices: list[int] = []
     titles: list[str] = []
@@ -28,8 +21,8 @@ def split_into_sections(full_text: str) -> Iterator[Tuple[str, str]]:
     for i, ln in enumerate(lines):
         stripped = ln.strip()
         if stripped.endswith(':') and stripped.isupper():
-            raw = stripped[:-1].strip()                   # drop trailing ':'
-            raw = re.sub(r'\s*\(.*?\)$', '', raw)          # drop any '(…)'
+            raw = stripped[:-1].strip()                   
+            raw = re.sub(r'\s*\(.*?\)$', '', raw)          
             key = raw.lower()
 
             # 2) Substring-based canonical mapping
