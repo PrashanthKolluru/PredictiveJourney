@@ -39,7 +39,7 @@ PredictiveJourney showcases end-to-end workflows from exploratory data analysis 
    - Supports English, Hindi, Telugu, French with bracketed translations
   
 10. **NYC Taxi Fare Prediction**  
-   - 120,000 trip records (fare mean ≈ $10.04, std ≈ $7.50, range $2.50–$49.90)
-   - Haversine distance + time features (hour, AM/PM, weekday) embeddings
-   - Tabular Neural Network (2 hidden layers: 200→100; Dropout = 0.4)
-   - Trained 300 epochs with Adam (lr = 0.001) → Validation RMSE: ± $3.67
+    - 120,000 trip records (fare mean ≈ $10.04, std ≈ $7.50, range $2.50–$49.90)
+    - Haversine distance + time features (hour, AM/PM, weekday) embeddings
+    - Tabular Neural Network (2 hidden layers: 200→100; Dropout = 0.4)
+    - Trained 300 epochs with Adam (lr = 0.001) → Validation RMSE: ± $3.67
