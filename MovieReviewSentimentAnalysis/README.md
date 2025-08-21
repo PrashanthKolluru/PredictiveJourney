@@ -71,7 +71,7 @@ Model predicted the sample review "This movie was super good and I enjoyed thoro
 ## 🛠️ Tech Stack
 
 - Python
-- pandas, numpy
+- pandas
 - scikit-learn
 - Natural Language Processing (NLP)
 - Machine Learning (SVM)
