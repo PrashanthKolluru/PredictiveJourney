@@ -1,4 +1,4 @@
-# PredictiveJourney
+# Predictive Journey
 
 > A curated portfolio of predictive analytics and machine learning projects by Sai Krishna Prashanth Kolluru.
 
