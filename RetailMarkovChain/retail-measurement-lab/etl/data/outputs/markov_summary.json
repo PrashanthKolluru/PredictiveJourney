@@ -1,0 +1,27 @@
+{
+  "baseline_conversion_prob": 0.008325636908736982,
+  "total_conversions": 22457.0,
+  "channel_attribution_share": {
+    "direct": 1.0,
+    "display": 0.0
+  },
+  "channel_lift": {
+    "direct": 1.734723475976807e-18,
+    "display": 0.0
+  },
+  "channel_conversions": {
+    "direct": 22457.0,
+    "display": 0.0
+  },
+  "channel_spend": {
+    "search": 567117.4535543175,
+    "social": 363244.2544384725,
+    "email": 197893.21806681913,
+    "display": 438806.00673756044,
+    "direct": 627432.2716165954
+  },
+  "channel_roas_like": {
+    "direct": 0.035791910961383865,
+    "display": 0.0
+  }
+}
